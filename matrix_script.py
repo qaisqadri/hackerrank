@@ -1,12 +1,26 @@
 import re
+import string
+if __name__ == '__main__':
+	nm = input().split()
 
-n, m = map(int, input().split())
-a, b = [], ""
-for _ in range(n):
-    a.append(input())
+	n = int(nm[0])
 
-for z in zip(*a):
-    b += "".join(z)
-print(b)
-print(re.sub(r"(?<=\w)([^\w]+)(?=\w)", " ", b))
+	m = int(nm[1])
 
+	matrix = []
+
+	for _ in range(n):
+	    matrix_item = input()
+	    matrix.append(matrix_item)
+	# print(matrix)
+	st=''
+	for y in range(m):
+		for x in range(n):
+			st=st+matrix[x][y]
+
+# print(st)
+st=re.sub(r'(?<=\w)([\W]+)(?=\w)',' ',st)
+# st=re.sub(r'[!@#$%&]'," ",st)
+# st = re.sub(r'\s+', ' ', st)           # Eliminate duplicate whitespaces
+
+print(st)
