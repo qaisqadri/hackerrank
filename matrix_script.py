@@ -7,6 +7,6 @@ for _ in range(n):
 
 for z in zip(*a):
     b += "".join(z)
-
+print(b)
 print(re.sub(r"(?<=\w)([^\w]+)(?=\w)", " ", b))
 

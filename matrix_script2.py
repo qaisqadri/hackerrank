@@ -18,9 +18,9 @@ if __name__ == '__main__':
 		for x in range(n):
 			st=st+matrix[x][y]
 
-print(st)
-# st=re.sub(r'['+string.punctuation+']',' ',st)
-st=re.sub(r'[!@#$%&]'," ",st)
-st = re.sub(r'\s+', ' ', st)           # Eliminate duplicate whitespaces
+# print(st)
+st=re.sub(r'(?<=\w)([\W]+)(?=\w)',' ',st)
+# st=re.sub(r'[!@#$%&]'," ",st)
+# st = re.sub(r'\s+', ' ', st)           # Eliminate duplicate whitespaces
 
 print(st)
